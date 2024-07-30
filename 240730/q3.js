@@ -44,7 +44,7 @@ async function runTasksParallel() {
   console.time("Parallel");
   try {
     // 병렬로 promise들을 한 번에 처리하는 코드
-    const results = Promise.all([task1, task2, task3]); // < 빈칸 2 >
+    const results = await Promise.all([task1(), task2(), task3()]); // < 빈칸 2 >
     results.forEach((result) => console.log(result));
   } catch (error) {
     console.error("Error:", error);
